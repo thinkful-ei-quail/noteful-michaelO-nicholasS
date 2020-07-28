@@ -6,17 +6,28 @@ import Note from './Note';
 import './NoteViewList.css';
 
 class NoteViewList extends React.Component {
-  static defaultProps = {
-    noteInfo: []
-  }
+    static defaultProps = {
+        noteInfo: []
+    }
 
-  render() {
-    return (
-      <section className="NoteViewList">
-        <h2>{this.props.noteInfo.modified}</h2>
-      </section>
-    );
-  }
+    render() {
+        const { notes } = this.props
+        return (
+            <section className="NoteViewList">
+                <ul> {notes.map(note =>
+                    <Note
+                        key={note.id}
+                        name={note.name}
+                        modified={note.modified}
+                        folderId={note.folderId}
+                        content={note.content}
+                    />
+                )}
+                </ul>
+            </section>
+
+        );
+    }
 }
 
 

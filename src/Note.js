@@ -6,8 +6,14 @@ import './Note.css';
 
 class Note extends React.Component {
     render() {
+
         return (
-            <button className='SingleNote'>text</button>
+            <li><button className='SingleNote'>{this.props.name}
+                <div>
+                    {this.props.modified}
+                </div>
+            </button>
+            </li>
 
         );
     }

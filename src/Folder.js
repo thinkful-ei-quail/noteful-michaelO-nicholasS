@@ -4,12 +4,12 @@ import Header from './Header';
 // import { Link } from 'react-router-dom'
 import './App.css';
 
-function App() {
+function Folder(props) {
   return (
-    <div className="App">
-    Folders Here
-    </div>
+    <li className="App">
+      <button>{props.name}</button>    
+    </li>
   );
 }
 
-export default App;
+export default Folder;

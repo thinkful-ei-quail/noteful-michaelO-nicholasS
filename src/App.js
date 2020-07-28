@@ -8,13 +8,17 @@ import Store from './Store';
 import MainPage from './MainPage';
 
 class App extends Component {
-  static defaultPorps = {
+  static defaultProps = {
     Store: {
       folders: [],
       notes: []
     }
   }
+  
   render() {
+    const {store} = this.props
+    console.log(store)
+    
     return (
       <div>
         <header>
@@ -22,7 +26,7 @@ class App extends Component {
         </header>
         
       <main>
-      <MainPage/>
+      <MainPage store={store}/>
       </main>
         
       </div>

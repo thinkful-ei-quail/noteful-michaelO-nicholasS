@@ -10,6 +10,6 @@ import './index.css';
 
 ReactDOM.render(
   <BrowserRouter>
-    <NoteViewList store={Store} />
+    <App store={Store} />
   </BrowserRouter>,
   document.getElementById('root'));

@@ -1,12 +1,16 @@
 import React from 'react';
 import './Header.css';
+import Folder from './Folder'
 
-function Sidebar() {
-  return (
-    <div className="sidebar">
-      Folders Here
-    </div>
-  );
+class Sidebar extends React.Component {
+  render() {
+    return (
+      <section className="sidebar">
+        <Folder/>
+      </section>
+    );
+  }
 }
+
 
 export default Sidebar;

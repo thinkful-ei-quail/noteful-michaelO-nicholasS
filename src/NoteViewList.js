@@ -5,12 +5,19 @@ import React from 'react';
 import Note from './Note';
 import './NoteViewList.css';
 
-function NoteViewList() {
-  return (
-    <div className="NoteViewList">
-    <Note/>
-    </div>
-  );
+class NoteViewList extends React.Component {
+  static defaultProps = {
+    noteInfo: []
+  }
+
+  render() {
+    return (
+      <section className="NoteViewList">
+        <h2>{this.props.noteInfo.modified}</h2>
+      </section>
+    );
+  }
 }
+
 
 export default NoteViewList;

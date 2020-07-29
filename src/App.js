@@ -29,10 +29,14 @@ class App extends Component {
         </header>
         
       <main>
-        <Route path='/' render={() => 
-        <MainPage store={store}/>}/>
-        <Route path='/Sidebar' render={() =>
+        <Route path='/' render={() => <MainPage store={store}/>}/>
+        
+        <Route path='/:folderId'
+        component={(props) => {return MainPage}}/>
+        
+        {/* <Route path='/Sidebar' render={() =>
         <Sidebar key={store.folder.id}/>}/>
+        
         {store.folders.map(folder =>(   
         <Link
          to={'/folder/'+folder.id}>
@@ -42,7 +46,7 @@ class App extends Component {
           id={folder.id}
           />
         </Link>
-        ))}
+        ))} */}
         
       </main>
         

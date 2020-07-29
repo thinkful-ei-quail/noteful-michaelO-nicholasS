@@ -4,6 +4,7 @@ import React from 'react';
 // import { Link } from 'react-router-dom'
 import Note from './Note';
 import './NoteViewList.css';
+import { Link } from 'react-router-dom'
 
 class NoteViewList extends React.Component {
     static defaultProps = {
@@ -14,7 +15,8 @@ class NoteViewList extends React.Component {
         const { notes } = this.props
         return (
             <section className="NoteViewList">
-                <ul> {notes.map(note =>
+                {notes.map(note =>
+                    <Link to={'/folder/' + note.id}>  
                     <Note
                         key={note.id}
                         name={note.name}
@@ -22,8 +24,9 @@ class NoteViewList extends React.Component {
                         folderId={note.folderId}
                         content={note.content}
                     />
+                    </Link>
                 )}
-                </ul>
+                
             </section>
 
         );

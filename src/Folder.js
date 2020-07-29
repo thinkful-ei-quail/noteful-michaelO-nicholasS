@@ -6,9 +6,9 @@ import './App.css';
 
 function Folder(props) {
   return (
-    <li className="App">
-      <button>{props.name}</button>    
-    </li>
+    <div className="App">
+      {props.name}   
+    </div>
   );
 }
 

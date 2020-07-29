@@ -8,12 +8,12 @@ class Note extends React.Component {
     render() {
 
         return (
-            <li><button className='SingleNote'>{this.props.name}
+            <div className='SingleNote'>{this.props.name}
                 <div>
                     {this.props.modified}
                 </div>
-            </button>
-            </li>
+            </div>
+            
 
         );
     }

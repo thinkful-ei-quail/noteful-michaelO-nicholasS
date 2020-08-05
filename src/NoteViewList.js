@@ -12,10 +12,11 @@ class NoteViewList extends React.Component {
     }
 
     render() {
-        const { notes } = this.props
+        const { notes, folderId } = this.props
+        const notesFiltered = folderId ? notes.filter(note => note.folderId ===folderId) : notes;
         return (
             <section className="NoteViewList">
-                {notes.map(note =>
+                {notesFiltered.map(note =>
                     <Link to={'/folder/' + note.id}>  
                     <Note
                         key={note.id}

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import { Route } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import NoteViewList from './NoteViewList';
 import Store from './Store';
@@ -29,10 +28,15 @@ class App extends Component {
         </header>
         
       <main>
-        <Route path='/' render={() => <MainPage store={store}/>}/>
+      <Switch>
+            <Route exact path='/' render={routerProps => <MainPage store={store} {...routerProps} />} />
+
+            <Route path='/folder/:folderId' render={routerProps => <MainPage store={store} routerProps={routerProps} />} />
+
+            {/* Add note view route here */}
+
+      </Switch>
         
-        <Route path='/:folderId'
-        component={(props) => {return MainPage}}/>
         
         {/* <Route path='/Sidebar' render={() =>
         <Sidebar key={store.folder.id}/>}/>

@@ -1,10 +1,6 @@
 import React from 'react';
-import Header from './Header';
-import { Route } from 'react-router-dom'
 import Sidebar from './Sidebar'
-// import { Link } from 'react-router-dom'
 import './MainPage.css';
-import Note from './Note';
 import NoteViewList from './NoteViewList';
 
 class MainPage extends React.Component {

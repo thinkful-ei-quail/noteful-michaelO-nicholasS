@@ -5,21 +5,21 @@ import { Link } from 'react-router-dom'
 
 class Sidebar extends React.Component {
   render() {
-    const {folders} = this.props
+    const { folders } = this.props
     console.log(folders)
     return (
       <section className="sidebar">
-      <ul>
-      
-      {folders.map(folder => (
-    <Link to={'/folder/' + folder.id}>
-       <Folder
-        key={folder.id}
-        name={folder.name}
-        id={folder.id}
-        />
-        </Link> 
-      ))}
+        <ul>
+
+          {folders.map(folder => (
+            <Link to={'/folder/' + folder.id} key={folder.id}>
+              <Folder
+                key={folder.id}
+                name={folder.name}
+                id={folder.id}
+              />
+            </Link>
+          ))}
         </ul>
       </section>
     );

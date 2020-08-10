@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import NoteViewList from './NoteViewList';
-import Store from './Store';
 import MainPage from './MainPage';
-import Sidebar from './Sidebar';
-import Folder from './Folder';
+import NoteView from './NoteView';
+
 
 class App extends Component {
  
@@ -31,9 +29,10 @@ class App extends Component {
       <Switch>
             <Route exact path='/' render={routerProps => <MainPage store={store} {...routerProps} />} />
 
-            <Route path='/folder/:folderId' render={routerProps => <MainPage store={store} routerProps={routerProps} />} />
+            {/* <Route path='/folder/:folderId' render={routerProps => <MainPage store={store} routerProps={routerProps} />} /> */}
 
             {/* Add note view route here */}
+            <Route path='/notes/:id' render={routerProps => <NoteView notes={store.notes} routerProps={routerProps} />} />
 
       </Switch>
         
